@@ -1,0 +1,8 @@
+{
+  "name": "shuttai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mashabow/shuttai.git",
+  "author": "Masaya Nakamura <mashabow@shiromoji.net>",
+  "license": "MIT"
+}
