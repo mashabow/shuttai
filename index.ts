@@ -39,7 +39,7 @@ const isDev = Boolean(process.env.DEV);
     .last()
     .getAttribute("id");
   // スラッシュコマンド `/freee_dakoku` を実行
-  await page.getByRole("textbox").fill("/freee_dakoku");
+  await textbox.fill("/freee_dakoku");
   await sendButton.click();
 
   // 新たな [出勤] ボタンの出現を待ってクリック
