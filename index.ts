@@ -31,13 +31,23 @@ const isDev = Boolean(process.env.DEV);
   });
 
   // 「人事労務freee」アプリで出勤の打刻をする
+
   await page.goto("https://app.slack.com/client/T02CW9KLLBD/D02D05JQ4V9");
+  // 最後のメッセージの ID を取得
+  const lastMessageId = await page
+    .getByRole("listitem")
+    .last()
+    .getAttribute("id");
+  // スラッシュコマンド `/freee_dakoku` を実行
   await page.getByRole("textbox").fill("/freee_dakoku");
   await sendButton.click();
-  // 出勤ボタンをクリック
+
+  // 新たな [出勤] ボタンの出現を待ってクリック
+  const shukkinButton = page
+    .locator(`${lastMessageId} + *`)
+    .getByRole("button", { name: "出勤" });
   if (!isDev) {
-    // TODO: 複数あった場合のハンドリング
-    await page.getByRole("button", { name: "出勤" }).click();
+    await shukkinButton.click();
   }
 
   if (isDev) {
