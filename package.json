@@ -8,7 +8,8 @@
   "scripts": {
     "shukkin": "ts-node index.ts shukkin",
     "taikin": "ts-node index.ts taikin",
-    "dev": "DEV=true ts-node index.ts shukkin"
+    "dev": "DEV=true ts-node index.ts shukkin",
+    "login": "playwright open https://app.slack.com/client --save-storage=auth.json"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
