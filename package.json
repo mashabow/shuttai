@@ -6,8 +6,9 @@
   "author": "Masaya Nakamura <mashabow@shiromoji.net>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node index.ts",
-    "dev": "DEV=1 ts-node index.ts"
+    "shukkin": "ts-node index.ts shukkin",
+    "taikin": "ts-node index.ts taikin",
+    "dev": "DEV=true ts-node index.ts shukkin"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
