@@ -5,8 +5,6 @@ const STORAGE_STATE_PATH = "auth.json";
 const isDev = Boolean(process.env.DEV);
 const isShukkin = process.argv[2] === "shukkin";
 
-console.log(process.argv);
-
 (async () => {
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext({
